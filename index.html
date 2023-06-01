@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Gatudi</title>
+    <style>
+        /* CSS to style the love message */
+        .love-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 24px;
+            color: rgb(249, 5, 5);
+            animation: pulse 1.5s infinite;
+
+        }
+        /* Keyframes for the pulse animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <script>
+        // Function to generate random positions
+        function getRandomPosition() {
+            var x = window.innerWidth;
+            var y = window.innerHeight;
+            var randomX = Math.floor(Math.random() * x);
+            var randomY = Math.floor(Math.random() * y);
+            return [randomX, randomY];
+        }
+
+        // Function to create and display the love message
+        function displayLoveMessage() {
+            var loveDiv = document.createElement('div');
+            loveDiv.className = 'love-message';
+            loveDiv.innerText = 'I Love You Jaya Rajpurohit ♥';
+            var position = getRandomPosition();
+            loveDiv.style.top = position[1] + 'px';
+            loveDiv.style.left = position[0] + 'px';
+            document.body.appendChild(loveDiv);
+        }
+
+        // Call the displayLoveMessage function repeatedly
+        function startLove() {
+            setInterval(displayLoveMessage, 100); // Display a new message every 100 milliseconds
+        }
+
+        // Start displaying the love messages when the page is loaded
+        window.onload = startLove;
+    </script>
+</head>
+<body>
+</body>
+</html>
